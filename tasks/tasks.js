@@ -57,7 +57,7 @@ console.log(longStringResult);
 // Сделайте это задание, используя методы перебора массива.
 var textMe = "Я так сильно люблю программировать";
 var textMeArray = textMe.split(" ");
-textMeArray.forEach(function(item, index, array){
+textMeArray.forEach(function(item){
 	for(let r = 0; r < item.length; r++) {
 		console.log(item.length + " - Длина каждой строки ");
 	};
@@ -65,23 +65,68 @@ textMeArray.forEach(function(item, index, array){
 
 // Task 5.
 // У нас есть массив с языками программирования:
-   var langs = [
-        "php", 
-        "kotlin",  
-        "php", 
-        "css", 
-        "css",
-        "Kotlin", 
-        "python",
-        "script", 
-        "script", 
-        "html", 
-        "html", 
-        "java", 
-        "c++", 
-        "Html", 
-        "Ruby"
-    ];
 // Напишите функцию, которая возвращает массив, в котором удалены повторяющиеся элементы из массива.
 // "kotlin" и "Kotlin" - это одинаковые языки, регистр не имеет значения.
+// var langs = [
+// 	"php", 
+// 	"kotlin",  
+// 	"php", 
+// 	"css", 
+// 	"css",
+// 	"Kotlin", 
+// 	"python",
+// 	"script", 
+// 	"script", 
+// 	"html", 
+// 	"html", 
+// 	"java", 
+// 	"c++", 
+// 	"Html", 
+// 	"Ruby"
+// ];
 
+// Task 7.
+// Напишите функцию, которая возвращает массив элементов,
+// представляющих собой сумму соответствующих элементов заданных массивов.
+// То есть, первый элемент первого массива 
+// должен складываться с первым элементом второго массива, второй со вторым, и так далее.
+// Example:
+// [37, 23, 43, 34, 55];
+// [40, 533, 601];
+// result: [77, 556, 644, 34, 55]
+
+var n1 = [23, 875, 43, 4341, 545,];
+var n2 = [85, 24, 4424, 445, 19, 14, 249];
+
+function numSum(n1, n2){
+	const numMaxLength = Math.max(n1.length, n2.length);
+	var numResult = [];
+	for(let q = 0; q < numMaxLength; q ++){
+		numResult.push((n1[q] ?? 0) + (n2[q ?? 0]));
+	};
+	return numResult;
+};
+
+var functionSum = numSum(n1, n2);
+console.log(functionSum);
+
+// Task 8 (необязательно).
+// Напишите функцию, которая раскрывает вложенный массив любой глубины. 
+// На выходе мы должны получить массив. Используйте метод reduce.
+// Example:
+// [333, [222,[444,[985]]]] // [333, 222, 444, 985] 
+// [298, [855], [22, [[89]]],[10,69]] //  [298, 855, 22, 89, 10, 69]
+
+var arr1 = [333, [222,[444,[985]]]];
+var arr2 = [298, [855], [22, [[89]]],[10,69]];
+function openArray(arr1,arr2){
+const arrSum = Math.max(arr1.length, arr2.length);
+var arrResult = [];
+for(let x = 0; x <arrSum; x++ ){
+	arrResult.push((arr1[x] ?? 0) + (arr2[x] ?? 0));
+	arrResult.reduce([]);
+};
+return arrResult;
+};
+
+openArray();

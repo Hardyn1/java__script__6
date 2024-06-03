@@ -58,3 +58,4 @@ var str1Result = str1.replace("Python", "Ruby");
 console.log(str1Result);
 // 1 аргумент то значение что мы хотим изменить.
 // Метод Replace находит подстроки и заменяет их другой подстрокой.
+
