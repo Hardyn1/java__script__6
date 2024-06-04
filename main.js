@@ -6,8 +6,8 @@ var cars = ["lada", "opel", "volkswagen", "bmw", "nissan"];
 
 // Метод forEach.
 cars.forEach(function(item,index,array){
-	// console.log(item);
-	// console.log(index);
+	console.log(item);
+	console.log(index);
 	console.log(array);
 });
 // Метод forEach()выполняет указанную функцию один раз для каждого элемента в массиве.

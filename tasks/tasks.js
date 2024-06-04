@@ -67,23 +67,35 @@ textMeArray.forEach(function(item){
 // У нас есть массив с языками программирования:
 // Напишите функцию, которая возвращает массив, в котором удалены повторяющиеся элементы из массива.
 // "kotlin" и "Kotlin" - это одинаковые языки, регистр не имеет значения.
-// var langs = [
-// 	"php", 
-// 	"kotlin",  
-// 	"php", 
-// 	"css", 
-// 	"css",
-// 	"Kotlin", 
-// 	"python",
-// 	"script", 
-// 	"script", 
-// 	"html", 
-// 	"html", 
-// 	"java", 
-// 	"c++", 
-// 	"Html", 
-// 	"Ruby"
-// ];
+var langs = [
+	"php", 
+	"kotlin",  
+	"php", 
+	"css", 
+	"css",
+	"Kotlin", 
+	"python",
+	"script", 
+	"script", 
+	"html", 
+	"html", 
+	"java", 
+	"c++", 
+	"Html", 
+	"Ruby"
+];
+
+function uniqueLang(array){
+	let newLangsArr = [...new Set(langs)];
+for(let t = 0; t < langs.length; t ++){
+	if(newLangsArr < langs) {
+		langs = newLangsArr;
+	};
+};
+};
+
+var uniqueResult = uniqueLang(langs);
+console.log(langs);
 
 // Task 7.
 // Напишите функцию, которая возвращает массив элементов,
@@ -115,18 +127,14 @@ console.log(functionSum);
 // На выходе мы должны получить массив. Используйте метод reduce.
 // Example:
 // [333, [222,[444,[985]]]] // [333, 222, 444, 985] 
-// [298, [855], [22, [[89]]],[10,69]] //  [298, 855, 22, 89, 10, 69]
+// [298, [855], [22, [[89]]],[10,69]] // [298, 855, 22, 89, 10, 69]
 
 var arr1 = [333, [222,[444,[985]]]];
 var arr2 = [298, [855], [22, [[89]]],[10,69]];
-function openArray(arr1,arr2){
-const arrSum = Math.max(arr1.length, arr2.length);
-var arrResult = [];
-for(let x = 0; x <arrSum; x++ ){
-	arrResult.push((arr1[x] ?? 0) + (arr2[x] ?? 0));
-	arrResult.reduce([]);
-};
-return arrResult;
+
+function openArray(arrays){
+var arr1New = arr1.reduce([]);
+console.log(arr1New);
 };
 
 openArray();
