@@ -39,13 +39,24 @@ console.log(resulT);
 // Task 3.
 // Напишите функцию, которая проверяет длину строки, и если она больше 50ти символов,
 // то обрежьте её до 50 символов и вместо последних трех, поставьте "..." (троеточие)
+// var longString = "Eto ochen dlinaja stroka Eto ochen dlinaja stroka Eto ochen dlinaja stroka"; 
+// function sliceString (string) {
+// 	var newShortString;
+// 	if(longString.length > 50) {
+// 		newShortString = longString.slice(0, 46) + "...";
+// 	};
+// return newShortString;
+// };
+
+// var longStringResult = sliceString(longString);
+// console.log(longStringResult);
+
 var longString = "Eto ochen dlinaja stroka Eto ochen dlinaja stroka Eto ochen dlinaja stroka"; 
 function sliceString (string) {
-	var newShortString;
 	if(longString.length > 50) {
-		newShortString = longString.slice(0, 46) + "...";
+		string = longString.slice(0, 46) + "...";
 	};
-return newShortString;
+return string;
 };
 
 var longStringResult = sliceString(longString);
@@ -59,9 +70,21 @@ var textMe = "Я так сильно люблю программировать";
 var textMeArray = textMe.split(" ");
 textMeArray.forEach(function(item){
 	for(let r = 0; r < item.length; r++) {
-		console.log(item.length + " - Длина каждой строки ");
+		console.log(item.length + " - " + " Длина каждой строки ");
 	};
 });
+
+function wordLength(text){
+	var textMeArray = text.split(" ");
+	for(let r = 0; r < textMeArray.length; r++) {
+		console.log(textMeArray[r].length + " - " + textMeArray[r]);
+	};
+};
+
+wordLength("Я так сильно люблю программировать");
+
+	
+
 
 // Task 5.
 // У нас есть массив с языками программирования:
@@ -114,7 +137,7 @@ function numSum(n1, n2){
 	const numMaxLength = Math.max(n1.length, n2.length);
 	var numResult = [];
 	for(let q = 0; q < numMaxLength; q ++){
-		numResult.push((n1[q] ?? 0) + (n2[q ?? 0]));
+		numResult.push((n1[q] ?? 0) + (n2[q] ?? 0));
 	};
 	return numResult;
 };
@@ -133,8 +156,10 @@ var arr1 = [333, [222,[444,[985]]]];
 var arr2 = [298, [855], [22, [[89]]],[10,69]];
 
 function openArray(arrays){
-var arr1New = arr1.reduce([]);
-console.log(arr1New);
+var arr1New = arr1.flat(3);
+var arr2New = arr2.flat(3);
+var arrayNew = [...arr1New, ...arr2New];
+console.log(arrayNew);
 };
 
-openArray();
+
