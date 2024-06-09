@@ -109,16 +109,26 @@ var langs = [
 ];
 
 function uniqueLang(array){
-	let newLangsArr = [...new Set(langs)];
-for(let t = 0; t < langs.length; t ++){
-	if(newLangsArr < langs) {
-		langs = newLangsArr;
-	};
-};
+	var langsLower = array.map(e => e.toLowerCase());
+	let newLangsArr = [...new Set(langsLower)];
+	return newLangsArr;
 };
 
 var uniqueResult = uniqueLang(langs);
-console.log(langs);
+console.log(uniqueResult);
+
+// function uniqueLang(array){
+// 	var langsLower = langs.map(e => e.toLowerCase());
+// 	let newLangsArr = [...new Set(langs)];
+// for(let t = 0; t < langs.length; t ++){
+// 	if(newLangsArr < langs) {
+// 		langs = newLangsArr;
+// 	};
+// };
+// };
+
+// var uniqueResult = uniqueLang(langs);
+// console.log(langs);
 
 // Task 7.
 // Напишите функцию, которая возвращает массив элементов,
